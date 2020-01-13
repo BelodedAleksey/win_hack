@@ -23,9 +23,6 @@ var (
 	counter int
 )
 
-// HOOKPROC ...
-type HOOKPROC func(int, uintptr, uintptr) uintptr
-
 // LowLevelKeyboardProcess ...
 func LowLevelKeyboardProcess(nCode int, wparam w32.WPARAM, lparam w32.LPARAM) w32.LRESULT {
 	var temporaryKeyPtr w32.HHOOK

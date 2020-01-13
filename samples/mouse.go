@@ -36,8 +36,8 @@ func LowLevelMouseProcess(nCode int, wparam w32.WPARAM, lparam w32.LPARAM) w32.L
 	return w32.CallNextHookEx(temporaryKeyPtr, nCode, wparam, lparam)
 }
 
-//run in main()
-func mouseStart() {
+//TestMouse func
+func TestMouse() {
 	// Set Log output to a file
 	filename := fmt.Sprintf("C:\\mouse.txt")
 	logFile, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE, 0755)
@@ -53,7 +53,8 @@ func mouseStart() {
 	w32.UnhookWindowsHookEx(mouseHook)
 }
 
-func mouse() {
+//TestMouseCircle func
+func TestMouseCircle() {
 	//mouseStart()
 	var oldX, oldY int
 	var targetX, targetY int

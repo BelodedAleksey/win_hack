@@ -15,4 +15,5 @@ var (
 	procGetKeyboardState           = user32.NewProc("GetKeyboardState")
 	procGetKeyboardLayoutName      = user32.NewProc("GetKeyboardLayoutNameW")
 	procGetKeyboardLayout          = user32.NewProc("GetKeyboardLayout")
+	enumWindowsProc                = user32.NewProc("EnumWindows")
 )

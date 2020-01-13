@@ -10,3 +10,6 @@ SAMPLES:
     -Change another window's position, blend, text, menu, controls
     -Draw on another windows
     -Start GUI from services
+    -PE injection
+    -Process Hollowing
+    -Process DoppelGanging

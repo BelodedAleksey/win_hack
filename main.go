@@ -1,11 +1,13 @@
 package main
 
 import (
-	"main/samples"
+	"main/injector"
 )
 
 func main() {
 	//samples.TestOpacity()
 	//samples.TestPaint()
-	samples.TestMenu()
+	//samples.TestMenu()
+	injector.TestInject()
+	//samples.TestKey()
 }

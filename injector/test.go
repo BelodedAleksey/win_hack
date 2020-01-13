@@ -5,7 +5,8 @@ import (
 	"strconv"
 )
 
-func main() {
+//TestInject func
+func TestInject() {
 	log.Printf("Loading debug privileges...")
 	loadDebugPrivileges()
 	log.Printf("Done!")
@@ -13,7 +14,7 @@ func main() {
 	// dllFile, exeFile := os.Args[1], os.Args[2]
 	// injectExe(dllFile, exeFile)
 
-	dllFile, pidString := "my.dll", "pid"
+	dllFile, pidString := "E:\\GOPROJECTS\\win_hack\\dll\\my.dll", "23228"
 	pid, err := strconv.ParseInt(pidString, 10, 64)
 	must(err)
 	injectPID(dllFile, pid)

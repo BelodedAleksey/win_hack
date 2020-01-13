@@ -135,11 +135,12 @@ func doInject(dllFile string, pid int64) {
 	log.Printf("Created remote thread: ID %012x, handle %012x", threadId, threadHandle)
 
 	beforeWait := time.Now()
-	event, err := syscall.WaitForSingleObject(threadHandle, 4000)
+	event, err := syscall.WaitForSingleObject(threadHandle, 4000) //syscall.INFINITE
 	log.Printf("(Wait took %v)", time.Since(beforeWait))
 	must(err)
 	if event == syscall.WAIT_OBJECT_0 {
 		log.Printf("Oh hey injection... worked?")
+		//VirtualFreeEx()
 		exitCode, err := syscallex.GetExitCodeThread(threadHandle)
 		must(err)
 		log.Printf("Thread exit code: %012x", exitCode)

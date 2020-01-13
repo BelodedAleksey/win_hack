@@ -83,3 +83,13 @@ func StringToUintptr(str string) uintptr {
 	p1 := &a1[0]
 	return uintptr(unsafe.Pointer(p1))
 }
+
+//LOWORD func
+func LOWORD(dw uint32) uint16 {
+	return uint16(dw)
+}
+
+//HIWORD func
+func HIWORD(dw uint32) uint16 {
+	return uint16(dw >> 16 & 0xffff)
+}

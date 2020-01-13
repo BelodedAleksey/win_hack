@@ -1,4 +1,4 @@
-package dll
+package main
 
 import (
 	"fmt"
