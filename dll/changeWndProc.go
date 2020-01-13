@@ -36,13 +36,14 @@ func changeWndProc() {
 			}
 			break
 		case w32.WM_PAINT:
+			w32.InvalidateRect(hwnd, nil, true)
+			w32.UpdateWindow(hwnd)
 			prev := w32.POINT{}
-			p := w32.PAINTSTRUCT{}
-			hdc := w32.BeginPaint(hwnd, &p)
+			hdc := w32.GetDC(hwnd)
 			w32.MoveToEx(hdc, 20, 20, &prev)
 			w32.LineTo(hdc, 50, 50)
 			w32.MoveToEx(hdc, int(prev.X), int(prev.Y), &prev)
-			w32.EndPaint(hwnd, &p)
+			w32.ReleaseDC(hwnd, hdc)
 			break
 		}
 		//return w32.DefWindowProc(hwnd, msg, wParam, lParam)
