@@ -78,6 +78,29 @@ func EnumWindows(callback func(window w32.HWND) uintptr) bool {
 	return ret != 0
 }
 
+//CreatePatternBrush func
+func CreatePatternBrush(hBitmap w32.HBITMAP) w32.HBRUSH {
+	ret, _, _ := createPatternBrushProc.Call(uintptr(hBitmap))
+	return w32.HBRUSH(ret)
+}
+
+//SetActiveWindow func
+func SetActiveWindow(hwnd w32.HWND) w32.HWND {
+	ret, _, _ := setActiveWindowProc.Call(uintptr(hwnd))
+	return w32.HWND(ret)
+}
+
+//FindWindowEx func
+func FindWindowEx(parent, child w32.HWND, className, windowName string) w32.HWND {
+	ret, _, _ := findWindowExProc.Call(
+		uintptr(parent),
+		uintptr(child),
+		uintptr(unsafe.Pointer(syscall.StringToUTF16Ptr(className))),
+		uintptr(unsafe.Pointer(syscall.StringToUTF16Ptr(windowName))),
+	)
+	return w32.HWND(ret)
+}
+
 type window struct {
 	Title  string
 	Handle w32.HWND

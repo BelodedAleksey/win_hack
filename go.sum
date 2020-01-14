@@ -16,6 +16,8 @@ github.com/go-vgo/robotgo v0.0.0-20200111145433-6e6028a14d57 h1:0BtenaNSwWghFTsH
 github.com/go-vgo/robotgo v0.0.0-20200111145433-6e6028a14d57/go.mod h1:P6/F9lmSF2Z/74P/m80qEm6ApjE5HmB+rSzfBCNqIPo=
 github.com/gonutz/w32 v1.0.0 h1:3t1z6ZfkFvirjFYBx9pHeHBuKoN/VBVk9yHb/m2Ll/k=
 github.com/gonutz/w32 v1.0.0/go.mod h1:Rc/YP5K9gv0FW4p6X9qL3E7Y56lfMflEol1fLElfMW4=
+github.com/gonutz/wui v2.0.0+incompatible h1:lIZD8fythagPsBTrwfDYIbWJeNaq/R4jye7S69Pqw+s=
+github.com/gonutz/wui v2.0.0+incompatible/go.mod h1:cpEPmIh19mpxkcho2qMHLX16gVteB1aee8g11887kyE=
 github.com/itchio/headway v0.0.0-20190702175331-a4c65c5306de h1:RQW9xPqYtvjdHHRZR95XsaEA9B4URCuNHK78IuJcc+Y=
 github.com/itchio/headway v0.0.0-20190702175331-a4c65c5306de/go.mod h1:Iif+7HeesRB0PvTYf0gOIFX8lj0za0SUsWryENQYt1E=
 github.com/itchio/ox v0.0.0-20191031175435-32d876f09b55 h1:EDWFa5o0RY51WpqKkZVaxd1Z7dvPHIJHs73qQPQ6nmA=
@@ -54,6 +56,8 @@ github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXf
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.3.1-0.20190311161405-34c6fa2dc709/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
+github.com/tadvi/winc v0.0.0-20190405175627-5454f291903d h1:IMe61i0F1F/AugXLCNYqi8NSqRm6ybWloiU/lQRnk+I=
+github.com/tadvi/winc v0.0.0-20190405175627-5454f291903d/go.mod h1:tNBZi4sduF/C3bQE2wGTIccmErQ4A9M9QkPsICVg+oE=
 github.com/vcaesar/gops v0.0.0-20190910162627-58ac09d12a53 h1:tYb/9KQi8dTCSDia2NwbuhUbKlaurqC/S7MFQo96nLk=
 github.com/vcaesar/gops v0.0.0-20190910162627-58ac09d12a53/go.mod h1:5txYrXKrQG6ZJYdGIiMVVxiOhbdACnwBcHzIwGQ7Nkw=
 github.com/vcaesar/imgo v0.0.0-20191008162304-a83ea7753bc8 h1:9Y+hoKBYa+UtzGqkODfs8c0Q6gp2UfniVNsHQWghPi0=

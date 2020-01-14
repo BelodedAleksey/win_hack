@@ -1,11 +1,13 @@
 package main
 
 import (
-	"main/win"
+	"fmt"
 	"syscall"
 
 	"github.com/gonutz/w32"
 	"github.com/nanitefactory/winmb"
+	"github.com/tadvi/winc"
+	"github.com/zetamatta/go-outputdebug"
 )
 
 //changeWndProc func
@@ -19,7 +21,10 @@ func changeWndProc() {
 	w32.DrawMenuBar(hwnd)
 	//Painting by catch WM_PAINT
 	origProc := w32.GetWindowLongPtr(hwnd, w32.GWLP_WNDPROC)
+	var canvas *winc.Canvas
+	//bitmap, _ := winc.NewBitmapFromFile("E:\\GOPROJECTS\\win_hack\\assets\\image.bmp", winc.RGB(255, 0, 255))
 	wndProc := func(hwnd w32.HWND, msg uint32, wParam, lParam uintptr) uintptr {
+		outputdebug.String(fmt.Sprintf("Message: %s wParam: %s lParam: %s", msg, wParam, lParam))
 		switch msg {
 		case w32.WM_COMMAND:
 			switch wParam {
@@ -29,21 +34,34 @@ func changeWndProc() {
 			}
 			break
 		case w32.WM_MENUSELECT:
-			//win.LOWORD(uint32(wParam)) - id of menu item by position
+			//w32.LOWORD(uint32(wParam)) - id of menu item by position
 			//lparam - handle of menu
-			if win.LOWORD(uint32(wParam)) == 0 && lParam == uintptr(hmenu) {
+			//Select menu item on 0 position
+			/*if w32.LOWORD(uint32(wParam)) == 0 && lParam == uintptr(hmenu) {
 				winmb.MessageBoxPlain("MENU: ", "File clicked!")
-			}
+			}*/
 			break
 		case w32.WM_PAINT:
-			w32.InvalidateRect(hwnd, nil, true)
-			w32.UpdateWindow(hwnd)
-			prev := w32.POINT{}
-			hdc := w32.GetDC(hwnd)
+			//Call with any redraw
+			//w32.InvalidateRect(hwnd, nil, true)
+			//w32.UpdateWindow(hwnd)
+
+			//hdc := w32.GetDC(hwnd)
+			//defer w32.ReleaseDC(hwnd, hdc)
+			//Draw line
+			/*prev := w32.POINT{}
 			w32.MoveToEx(hdc, 20, 20, &prev)
 			w32.LineTo(hdc, 50, 50)
-			w32.MoveToEx(hdc, int(prev.X), int(prev.Y), &prev)
-			w32.ReleaseDC(hwnd, hdc)
+			w32.MoveToEx(hdc, int(prev.X), int(prev.Y), &prev)*/
+			//Draw Text
+			//w32.TextOut(hdc, 5, 5, "Проверочка!!!")
+
+			//Draw Bitmap
+			//canvas = winc.NewCanvasFromHwnd(winc32.HWND(hwnd))
+			//canvas.DrawBitmap(bitmap, 0, 0)
+			break
+		case w32.WM_DESTROY:
+			canvas.Dispose()
 			break
 		}
 		//return w32.DefWindowProc(hwnd, msg, wParam, lParam)
